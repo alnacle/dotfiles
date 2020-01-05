@@ -1,0 +1,30 @@
+#!/bin/sh
+
+clone() {
+	if [ -d ${2} ]; then
+		cd ${2} && git pull --rebase
+	else
+		git clone --recursive ${1} ${2}
+	fi
+}
+
+# Install the vim-plug plugin 
+echo "Downloading vim-plug"
+curl -fsLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \
+    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+
+# clone some repositories
+clone https://github.com/junegunn/fzf.git             ~/.fzf
+clone https://github.com/syndbg/goenv.git             ~/.goenv
+clone https://github.com/pyenv/pyenv.git              ~/.pyenv
+clone https://github.com/pyenv/pyenv-doctor.git       ~/.pyenv/plugins/pyenv-doctor
+clone https://github.com/pyenv/pyenv-installer.git    ~/.pyenv/plugins/pyenv-installer
+clone https://github.com/pyenv/pyenv-update.git       ~/.pyenv/plugins/pyenv-update
+clone https://github.com/pyenv/pyenv-virtualenv.git   ~/.pyenv/plugins/pyenv-virtualenv
+clone https://github.com/pyenv/pyenv-which-ext.git    ~/.pyenv/plugins/pyenv-which-ext
+clone https://github.com/nodenv/nodenv.git            ~/.nodenv
+clone https://github.com/nodenv/node-build.git        ~/.nodenv/plugins/node-build
+clone https://github.com/nodenv/nodenv-package-rehash ~/.nodenv/plugins/nodenv-package-rehash.git
+
+# post clone 
+~/.fzf/install --bin
