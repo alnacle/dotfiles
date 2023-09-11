@@ -1,0 +1,16 @@
+.git
+*.png
+*.PNG
+*.jpg
+*.JPG
+*.jpeg
+*.ico
+*.gif
+*.GIF
+*.pyc
+*.lock
+*.pdf
+*.PDF
+.DS_Store
+node_modules
+package-lock.json

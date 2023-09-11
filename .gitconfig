@@ -1,0 +1,64 @@
+[include]
+    path = ~/.gitconfig.local
+
+[core]
+    editor = nvim
+    excludesfile = ~/.gitignore
+    pager = delta
+
+[alias]
+    st = status
+    stat = status
+    ci = commit
+    co = checkout
+    tree = log --graph --oneline --decorate --all
+	pr = "!f() { git fetch -fu ${2:-origin} refs/pull/$1/head:pr/$1 && git checkout pr/$1; }; f"
+
+[push]
+	default = simple
+
+[merge]
+    ff = false
+    conflictstyle = diff3
+
+[branch]
+	autosetuprebase = always
+
+[init]
+    defaultBranch = main
+
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+    required = true
+
+[interactive]
+    diffFilter = delta --color-only
+
+[delta]
+    navigate = true    # use n and N to move between diff sections
+    light = false      # set to true if you're in a terminal w/ a light background color (e.g. the default macOS terminal)
+
+[diff]
+    colorMoved = default
+
+[color "decorate"]
+    HEAD = cyan
+    remoteBranch = red bold
+    stash = yellow
+    tag = blue bold
+
+[color "branch"]
+    current = yellow bold
+    local = green bold
+    remote = cyan bold
+
+[color "status"]
+    added = green bold
+    changed = yellow bold
+    untracked = red bold
+
+[color]
+	ui = true
+
