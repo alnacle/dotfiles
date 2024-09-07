@@ -4,8 +4,6 @@ alias df='df -h'
 alias tmux='TERM=xterm-256color \tmux'
 alias duh='du -sh -h * .[^.]* 2> /dev/null | sort -h'
 
-[ -x "$(command -v exa)" ] && alias ls="exa"
-[ -x "$(command -v bat)" ] && alias cat="bat"
 [ -x "$(command -v nvim)" ] && alias {v,vi,vim}="nvim"
 
 case `uname` in
@@ -17,10 +15,8 @@ case `uname` in
   ;;
   Linux)
     alias ll='ls -halG'
-    alias ls='ls --color=auto' 
-
-    export JAVA_HOME=/opt/java
-    export PATH=$JAVA_HOME/bin:$PATH
+    alias ls='ls --color=auto'
+    export TERM=xterm-256color
   ;;
   OpenBSD)
     export CVSROOT=anoncvs@anoncvs.usa.openbsd.org:/cvs
@@ -30,7 +26,7 @@ esac
 export LC_ALL="en_US.UTF-8"
 export LANG="en_US.UTF-8"
 
-export PATH=$HOME/bin
+export PATH=$HOME/.local/bin
 export PATH=$PATH:/usr/local/bin
 export PATH=$PATH:/usr/local/sbin
 export PATH=$PATH:/usr/bin
