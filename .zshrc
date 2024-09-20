@@ -4,12 +4,20 @@ alias df='df -h'
 alias tmux='TERM=xterm-256color \tmux'
 alias duh='du -sh -h * .[^.]* 2> /dev/null | sort -h'
 
+export PATH=$HOME/.local/bin
+export PATH=$PATH:/usr/local/bin
+export PATH=$PATH:/usr/local/sbin
+export PATH=$PATH:/usr/bin
+export PATH=$PATH:/usr/sbin
+export PATH=$PATH:/bin
+export PATH=$PATH:/sbin
+export PATH=$PATH:/opt/bin
+
 [ -x "$(command -v nvim)" ] && alias {v,vi,vim}="nvim"
 
 case `uname` in
   Darwin)
     alias ll='ls -al'
-
     export HOMEBREW_NO_ANALYTICS=1    # avoid analytics
     export HOMEBREW_NO_AUTO_UPDATE=1  # do not do brew update before install
   ;;
@@ -19,20 +27,14 @@ case `uname` in
     export TERM=xterm-256color
   ;;
   OpenBSD)
-    export CVSROOT=anoncvs@anoncvs.usa.openbsd.org:/cvs
+    export LSCOLORS=gxfxcxdxbxegedabagacad
+    [ -x "$(command -v colorls)" ] && alias ls='colorls -G'
+    alias ll='ls -alG'
   ;;
 esac
 
 export LC_ALL="en_US.UTF-8"
 export LANG="en_US.UTF-8"
-
-export PATH=$HOME/.local/bin
-export PATH=$PATH:/usr/local/bin
-export PATH=$PATH:/usr/local/sbin
-export PATH=$PATH:/usr/bin
-export PATH=$PATH:/usr/sbin
-export PATH=$PATH:/bin
-export PATH=$PATH:/sbin
 
 export EDITOR="nvim"
 
