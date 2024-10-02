@@ -13,13 +13,9 @@ vim.keymap.set('n', '<leader>r', '<C-W>w')
 
 vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<cr>')
 
-vim.keymap.set('n', '<tab>', ':bn<cr>')
-vim.keymap.set('n', '<s-tab>', ':bp<cr>')
-
-vim.keymap.set('n', '<C-h>', '<C-w><C-h>', { desc = 'Move focus to the left window' })
-vim.keymap.set('n', '<C-l>', '<C-w><C-l>', { desc = 'Move focus to the right window' })
-vim.keymap.set('n', '<C-j>', '<C-w><C-j>', { desc = 'Move focus to the lower window' })
-vim.keymap.set('n', '<C-k>', '<C-w><C-k>', { desc = 'Move focus to the upper window' })
+-- barbar
+vim.keymap.set('n', '<tab>',   '<Cmd>BufferNext<CR>')
+vim.keymap.set('n', '<s-tab>', '<Cmd>BufferPrevious<CR>')
 
 -- Neotree
 vim.keymap.set('n', '<leader>t', '<cmd>Neotree toggle position=float reveal<cr>')

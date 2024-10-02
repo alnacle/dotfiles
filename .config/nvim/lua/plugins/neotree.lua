@@ -12,7 +12,6 @@ return {
     statusline = false
   },
   opts = {
-    -- use_default_mappings = false,
     window = {
       mapping_options = {
         noremap = true,
@@ -24,7 +23,6 @@ return {
       },
     },
     filesystem = {
-      -- Use oil instead
       hijack_netrw_behavior = "disabled",
     },
   },
