@@ -9,7 +9,7 @@ return {
   },
   source_selector = {
     winbar = false,
-    statusline = false
+    statusline = false,
   },
   opts = {
     window = {

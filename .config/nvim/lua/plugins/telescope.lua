@@ -9,7 +9,7 @@ return {
     pickers = {
       find_files = {
         theme = "ivy",
-        previewer = false,
+        previewer = true,
       },
       live_grep = {
         theme = "ivy",
@@ -24,8 +24,20 @@ return {
       },
     },
     defaults = {
-      file_ignore_patterns = { "node_modules/", ".yarn/", ".git/", ".idea/" },
-    }
-  }
+      file_ignore_patterns = {
+        "node_modules/",
+        ".yarn/",
+        ".git/",
+        ".idea/",
+        "%.jpg",
+        "%.png",
+        "%.gif",
+        "%.webp",
+        "%.svg",
+        "%.pdf",
+        "%.pyc",
+        "%.zip",
+      },
+    },
+  },
 }
-

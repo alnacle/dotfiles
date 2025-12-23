@@ -1,43 +1,46 @@
-alias ..='cd ..'
-alias vimdiff='nvim -d'
-alias df='df -h'
-alias tmux='TERM=xterm-256color \tmux'
-alias duh='du -sh -h * .[^.]* 2> /dev/null | sort -h'
-
-export PATH=$HOME/.local/bin
-export PATH=$PATH:/usr/local/bin
-export PATH=$PATH:/usr/local/sbin
-export PATH=$PATH:/usr/bin
-export PATH=$PATH:/usr/sbin
-export PATH=$PATH:/bin
-export PATH=$PATH:/sbin
-export PATH=$PATH:/opt/bin
+# zshell config
 
 [ -x "$(command -v nvim)" ] && alias {v,vi,vim}="nvim"
 
 case `uname` in
   Darwin)
-    alias ll='ls -al'
     export HOMEBREW_NO_ANALYTICS=1    # avoid analytics
     export HOMEBREW_NO_AUTO_UPDATE=1  # do not do brew update before install
+    export HOMEBREW_NO_ENV_HINTS=1    # no more annoying messages
   ;;
   Linux)
-    alias ll='ls -halG'
-    alias ls='ls --color=auto'
-    export TERM=xterm-256color
+    alias ls='ls --color=auto' 
+
+    export JAVA_HOME=/opt/java
+    export PATH=$JAVA_HOME/bin:$PATH
   ;;
   OpenBSD)
     export LSCOLORS=gxfxcxdxbxegedabagacad
     [ -x "$(command -v colorls)" ] && alias ls='colorls -G'
-    alias ll='ls -alG'
   ;;
 esac
 
+# alises
+alias ..='cd ..'
+alias vimdiff='nvim -d'
+alias df='df -h'
+alias tmux='TERM=xterm-256color \tmux'
+alias duh='du -sh -h * .[^.]* 2> /dev/null | sort -h'
+alias ll='ls -hal'
+
+# exports
 export LC_ALL="en_US.UTF-8"
 export LANG="en_US.UTF-8"
+export TERM="xterm-256color"
+
+export PATH=$HOME/.local/bin
+export PATH=$PATH:/bin:/sbin
+export PATH=$PATH:/usr/bin:/usr/sbin
+export PATH=$PATH:/usr/local/bin
+export PATH=$PATH:/usr/local/sbin
+export PATH=$PATH:/opt/bin
 
 export EDITOR="nvim"
-
 export PAGER='less'
 export GIT_PAGER='less -F -X'
 
@@ -57,7 +60,7 @@ setopt hist_verify             # show command with history expansion to user bef
 setopt hist_reduce_blanks      # remove extra blanks from each command added to the history
 setopt hist_save_no_dups       # don't write a duplicate event to the history file
 setopt inc_append_history      # add commands to HISTFILE in order of execution
-unsetopt share_history          # no sharing history between sessions
+unsetopt share_history         # no sharing history between sessions
 
 # changing directories
 setopt auto_cd                 # if a command isn't valid, but is a directory, cd to that dir

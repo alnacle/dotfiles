@@ -1,0 +1,101 @@
+general.live_config_reload = true
+
+[colors.cursor]
+text = "0xf1c1c1"
+
+[colors.primary]
+background = "0x191919"
+foreground = "0xeaeaea"
+
+[font]
+size = 14.0
+
+[font.bold]
+family = "Hack Nerd Font"
+style = "Bold"
+
+[font.bold_italic]
+family = "Hack Nerd Font"
+style = "Italic"
+
+[font.italic]
+family = "Hack Nerd Font"
+style = "Italic"
+
+[font.normal]
+family = "Hack Nerd Font"
+style = "Regular"
+
+[[keyboard.bindings]]
+chars = "\u0010c"
+key = "T"
+mods = "Command"
+
+[[keyboard.bindings]]
+chars = "\u0010d"
+key = "D"
+mods = "Command"
+
+[[keyboard.bindings]]
+chars = "\u0010,"
+key = "F"
+mods = "Command"
+
+[[keyboard.bindings]]
+chars = "\u0010|"
+key = "Backslash"
+mods = "Command"
+
+[[keyboard.bindings]]
+chars = "\u0010-"
+key = "Minus"
+mods = "Command"
+
+[[keyboard.bindings]]
+chars = "\u00101"
+key = "Key1"
+mods = "Command"
+
+[[keyboard.bindings]]
+chars = "\u00102"
+key = "Key2"
+mods = "Command"
+
+[[keyboard.bindings]]
+chars = "\u00103"
+key = "Key3"
+mods = "Command"
+
+[[keyboard.bindings]]
+chars = "\u00104"
+key = "Key4"
+mods = "Command"
+
+[[keyboard.bindings]]
+chars = "\u00105"
+key = "Key5"
+mods = "Command"
+
+[[keyboard.bindings]]
+chars = "\u0010\u001B[A"
+key = "Up"
+mods = "Command"
+
+[[keyboard.bindings]]
+chars = "\u0010\u001B[B"
+key = "Down"
+mods = "Command"
+
+[[keyboard.bindings]]
+chars = "\u0010\u001B[C"
+key = "Right"
+mods = "Command"
+
+[[keyboard.bindings]]
+chars = "\u0010\u001B[D"
+key = "Left"
+mods = "Command"
+
+[window]
+dynamic_padding = true
+startup_mode = "Windowed"
